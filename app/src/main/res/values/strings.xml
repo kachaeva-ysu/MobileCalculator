@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="firstButton">(</string>
+    <string name="secondButton">)</string>
+    <string name="c">C</string>
+    <string name="fourthButton"><![CDATA[<-]]></string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="divide">/</string>
+    <string name="_4">4</string>
+    <string name="_8">8</string>
+    <string name="dot">.</string>
+    <string name="_0">0</string>
+    <string name="subtract">-</string>
+    <string name="_9">9</string>
+    <string name="equal">=</string>
+    <string name="_7">7</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="multiply">*</string>
+    <string name="add">+</string>
+    <string name="pi">pi</string>
+    <string name="e">e</string>
+    <string name="i">i</string>
+    <string name="gcd">НОД</string>
+    <string name="ctg">ctg</string>
+    <string name="sin">sin</string>
+    <string name="cos">cos</string>
+    <string name="tg">tg</string>
+    <string name="pow">^</string>
+    <string name="v">V</string>
+    <string name="abs">abs</string>
+    <string name="ln">ln</string>
+    <string name="sqrt">sqrt</string>
+    <string name="delete">⌫</string>
+</resources>
