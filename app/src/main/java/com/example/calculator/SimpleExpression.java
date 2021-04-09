@@ -172,25 +172,29 @@ public class SimpleExpression
                 }
                 else if (symbol.equals("sqrt"))
                 {
-                    stack.push(new ComplexNumber(Math.sqrt(Double.parseDouble(rValue.toString())), 0));
+                    double n=0.5;
+                    double arg;
+                    if(rValue.Re>0)
+                        arg=Math.atan(rValue.Im/rValue.Re);
+                    else
+                        arg=Math.atan(rValue.Im/rValue.Re)+Math.PI;
+                    stack.push(new ComplexNumber(Math.pow(rValue.GetAbs(),n)*Math.cos(n*arg),Math.pow(rValue.GetAbs(),n)*Math.sin(n*arg)));
                 }
                 else if (symbol.equals("sin"))
                 {
-                    stack.push(new ComplexNumber(Math.sin(Double.parseDouble(rValue.toString())), 0));
+                    stack.push(new ComplexNumber(Math.sin(rValue.Re)*Math.cosh(rValue.Im),Math.cos(rValue.Re)*Math.sinh(rValue.Im)));
                 }
                 else if (symbol.equals("cos"))
                 {
-                    stack.push(new ComplexNumber(Math.cos(Double.parseDouble(rValue.toString())), 0));
+                    stack.push(new ComplexNumber(Math.cos(rValue.Re)*Math.cosh(rValue.Im),-Math.sin(rValue.Re)*Math.sinh(rValue.Im)));
                 }
                 else if (symbol.equals("tg"))
                 {
-                    double rV=Double.parseDouble(rValue.toString());
-                    stack.push(new ComplexNumber(Math.sin(rV)/Double.parseDouble(String.format("%.3f",Math.cos(rV))), 0));
+                    stack.push(new ComplexNumber(Math.sin(rValue.Re*2)/(Math.cos(rValue.Re*2)+Math.cosh(rValue.Im*2)),Math.sinh(rValue.Im*2)/(Math.cos(rValue.Re*2)+Math.cosh(rValue.Im*2))));
                 }
                 else if (symbol.equals("ctg"))
                 {
-                    double rV=Double.parseDouble(rValue.toString());
-                    stack.push(new ComplexNumber(Math.cos(rV)/Double.parseDouble(String.format("%.3f",Math.sin(rV))), 0));
+                    stack.push(new ComplexNumber(-Math.sin(rValue.Re*2)/(Math.cos(rValue.Re*2)-Math.cosh(rValue.Im*2)),Math.sinh(rValue.Im*2)/(Math.cos(rValue.Re*2)-Math.cosh(rValue.Im*2))));
                 }
                 else if (symbol.equals("ln"))
                 {
@@ -209,7 +213,15 @@ public class SimpleExpression
                         stack.push(ComplexNumber.Divide(lValue , rValue));
                     else if (symbol.equals("^"))
                     {
-                        stack.push(new ComplexNumber(Math.pow(Double.parseDouble(lValue.toString()), Double.parseDouble(rValue.toString())), 0));
+                        if(rValue.Im!=0)
+                            throw new IllegalArgumentException();
+                        double n=rValue.Re;
+                        double arg;
+                        if(lValue.Re>0)
+                            arg=Math.atan(lValue.Im/lValue.Re);
+                        else
+                            arg=Math.atan(lValue.Im/lValue.Re)+Math.PI;
+                        stack.push(new ComplexNumber(Math.pow(lValue.GetAbs(),n)*Math.cos(n*arg),Math.pow(lValue.GetAbs(),n)*Math.sin(n*arg)));
                     }
                 }
             }
