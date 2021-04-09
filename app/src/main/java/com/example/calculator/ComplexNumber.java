@@ -1,5 +1,8 @@
 package com.example.calculator;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+
 public class ComplexNumber
 {
     public double Re;
@@ -15,6 +18,9 @@ public class ComplexNumber
     }
     public String toString()
     {
+        DecimalFormat df=new DecimalFormat("#.####");
+        Re=Double.parseDouble(df.format(Re));
+        Im=Double.parseDouble(df.format(Im));
         if (Re == 0 && Im == 0)
             return "0";
         if (Re == 0)
@@ -23,17 +29,17 @@ public class ComplexNumber
                 return "i";
             if (Im == -1)
                 return "-i";
-            return Im + "i";
+            return df.format(Im) + "i";
         }
         if (Im == 0)
-            return Double.toString(Re);
+            return df.format(Re);
         if (Im == 1)
-            return Re + "+i";
+            return df.format(Re) + "+i";
         if (Im == -1)
-            return Re + "-i";
+            return df.format(Re) + "-i";
         if (Im > 0)
-            return (Re + "+" + Im + "i");
-        return (Re + "-" + Math.abs(Im) + "i");
+            return (df.format(Re) + "+" + df.format(Im) + "i");
+        return (Re + df.format(Im) + "i");
     }
     public static ComplexNumber parse(String exp)
     {
