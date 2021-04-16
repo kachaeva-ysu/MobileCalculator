@@ -34,4 +34,6 @@
     <string name="ln">ln</string>
     <string name="sqrt">sqrt</string>
     <string name="delete">⌫</string>
+    <string name="_1number">Число 1</string>
+    <string name="_2number">Число 2</string>
 </resources>

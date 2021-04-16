@@ -4,13 +4,13 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/mycalc"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/roundcalc"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Calculator"
-        android:fullBackupContent="true">
-
+        android:theme="@style/Theme.Calculator">
+        <activity android:name=".GCDActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

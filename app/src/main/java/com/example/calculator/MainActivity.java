@@ -68,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void ButtonGCDClicked(android.view.View view)
     {
+        android.content.Intent intent=new android.content.Intent(MainActivity.this,GCDActivity.class);
+        startActivity(intent);
     }
     public void ButtonCalculateClicked(android.view.View view) {
         TextView output2 = findViewById(R.id.Output2);
