@@ -10,6 +10,74 @@
     android:background="#FFFFFF"
     tools:context=".GCDActivity">
 
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="400dp"
+        android:stretchColumns="0,1,2,3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+        <TableRow>
+
+            <EditText
+                android:id="@+id/Input1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:autofillHints=""
+                android:background="#EAD7ED"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="@string/_1number"
+                android:inputType="number"
+                android:onClick="Input1Clicked"
+                android:textColor="#471150"
+                android:textSize="24sp"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/Input2"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="30dp"
+                android:autofillHints=""
+                android:background="#EAD7ED"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="@string/_2number"
+                android:inputType="number"
+                android:onClick="Input2Clicked"
+                android:textColor="#471150"
+                android:textSize="24sp"
+                tools:ignore="MissingConstraints" />
+        </TableRow>
+
+        <TextView
+            android:id="@+id/OutputGCD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:textColor="#020202"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/OutputBezu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textColor="#020202"
+            android:textSize="24sp" />
+    </TableLayout>
 
     <TableLayout
         android:layout_width="fill_parent"
@@ -25,56 +93,6 @@
         tools:ignore="MissingConstraints">
 
 
-        <TableRow>
-
-            <EditText
-                android:id="@+id/Input1"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="300dp"
-                android:autofillHints=""
-                android:background="#FFEB3B"
-                android:clickable="true"
-                android:focusable="false"
-                android:hint="@string/_1number"
-                android:inputType="number"
-                android:onClick="Input1Clicked"
-                android:textColor="#471150"
-                android:textSize="18sp"
-                tools:ignore="MissingConstraints"></EditText>
-
-            <EditText
-                android:id="@+id/Input2"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="300dp"
-                android:autofillHints=""
-                android:background="#FFEB3B"
-                android:clickable="true"
-                android:focusable="true"
-                android:hint="@string/_2number"
-                android:inputType="number"
-                android:onClick="Input2Clicked"
-                android:textColor="#471150"
-                android:textSize="18sp"
-                tools:ignore="MissingConstraints"></EditText>
-        </TableRow>
-
-        <TextView
-            android:id="@+id/Output"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:gravity="end"
-            android:textColor="#020202"
-            android:textSize="48sp"
-        ></TextView>
 
         <TableRow>
 
@@ -88,7 +106,7 @@
                 android:text="@string/_1"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -100,7 +118,7 @@
                 android:text="@string/_2"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -112,7 +130,7 @@
                 android:text="@string/_3"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -122,7 +140,7 @@
                 android:text="@string/delete"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#EAD7ED"></Button>
+                app:backgroundTint="#EAD7ED" />
         </TableRow>
 
         <TableRow>
@@ -137,7 +155,7 @@
                 android:text="@string/_4"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -149,7 +167,7 @@
                 android:text="@string/_5"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -161,7 +179,7 @@
                 android:text="@string/_6"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -171,7 +189,7 @@
                 android:text="@string/c"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#EAD7ED"></Button>
+                app:backgroundTint="#EAD7ED" />
         </TableRow>
 
         <TableRow>
@@ -186,7 +204,7 @@
                 android:text="@string/_7"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -198,7 +216,7 @@
                 android:text="@string/_8"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -210,7 +228,7 @@
                 android:text="@string/_9"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -220,7 +238,7 @@
                 android:text="@string/subtract"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#EAD7ED"></Button>
+                app:backgroundTint="#EAD7ED" />
         </TableRow>
 
         <TableRow>
@@ -236,7 +254,7 @@
                 android:textAllCaps="false"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -248,7 +266,7 @@
                 android:text="@string/_0"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -260,7 +278,7 @@
                 android:text="@string/equal"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#9D72A5"></Button>
+                app:backgroundTint="#9D72A5" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -270,7 +288,7 @@
                 android:text="@string/add"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#EAD7ED"></Button>
+                app:backgroundTint="#EAD7ED" />
         </TableRow>
 
     </TableLayout>
