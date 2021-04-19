@@ -1,8 +1,6 @@
 package com.example.calculator;
 
-import java.math.BigDecimal;
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.Locale;
 
 public class ComplexNumber
@@ -43,7 +41,7 @@ public class ComplexNumber
             return df.format(Re) + "-i";
         if (Im > 0)
             return (df.format(Re) + "+" + df.format(Im) + "i");
-        return (Re + df.format(Im) + "i");
+        return (df.format(Re) + df.format(Im) + "i");
     }
     public static ComplexNumber parse(String exp)
     {

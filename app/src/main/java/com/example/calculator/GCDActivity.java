@@ -4,8 +4,12 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.InputType;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -24,6 +28,7 @@ public class GCDActivity extends AppCompatActivity {
         setContentView(R.layout.activity_g_c_d);
         Objects.requireNonNull(getSupportActionBar()).hide();
         getWindow().setStatusBarColor(getResources().getColor(R.color.black));
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
     public void Input1Clicked(android.view.View view)
     {
