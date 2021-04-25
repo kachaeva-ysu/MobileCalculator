@@ -10,8 +10,9 @@
         android:roundIcon="@mipmap/roundcalc"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calculator">
-        <activity android:name=".GCDActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".GCDActivity" />
+        <activity android:name=".MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

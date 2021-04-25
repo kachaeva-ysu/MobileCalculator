@@ -15,8 +15,12 @@ public class SimpleExpression
         {
             if (Priority(Character.toString(expression.charAt(i))) == -1 && Character.isLetter(expression.charAt(i))&&expression.charAt(i)!='i')
             {
-                if(previousSymbolIsANumber)
+                if(previousSymbolIsANumber) {
+                    operationsAndOperands.add(number.toString());
+                    number=new StringBuilder();
+                    previousSymbolIsANumber=false;
                     operationsAndOperands.add("*");
+                }
                 if (expression.charAt(i) == 'p' && expression.charAt(i+1) == 'i')
                 {
                     i +=1;

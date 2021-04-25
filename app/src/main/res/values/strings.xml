@@ -23,7 +23,6 @@
     <string name="pi">pi</string>
     <string name="e">e</string>
     <string name="i">i</string>
-    <string name="gcd">НОД</string>
     <string name="ctg">ctg</string>
     <string name="sin">sin</string>
     <string name="cos">cos</string>
@@ -36,4 +35,7 @@
     <string name="delete">⌫</string>
     <string name="_1number">Число 1</string>
     <string name="_2number">Число 2</string>
+    <string name="calc">Калькулятор</string>
+    <string name="der">Производные</string>
+    <string name="gcd">НОД</string>
 </resources>
