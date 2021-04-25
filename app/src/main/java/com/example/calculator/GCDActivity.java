@@ -62,6 +62,7 @@ public class GCDActivity extends AppCompatActivity {
         input1.setText("");
         EditText input2=findViewById(R.id.Input2);
         input2.setText("");
+        inputNumber=1;
     }
     public void ButtonDeleteSymbolClicked(android.view.View view)
     {
@@ -76,7 +77,6 @@ public class GCDActivity extends AppCompatActivity {
                 if(text.length()!=0)
             input2.setText(text.substring(0,text.length()-1));}
     }
-    @SuppressLint({"SetTextI18n", "DefaultLocale"})
     public void ButtonCalculateClicked(android.view.View view)
     {
         GCD gcd=new GCD();

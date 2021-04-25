@@ -2,13 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style='"?android:attr/buttonBarButtonStyle"'
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_marginEnd="5dp"
-    android:layout_marginRight="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".MainActivity">
+    tools:context=".DerivativesActivity">
 
     <TableLayout
         android:layout_width="fill_parent"
@@ -75,7 +72,7 @@
                 android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:onClick="ButtonClicked"
-                android:text="@string/abs"
+                android:text="@string/ln"
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
@@ -86,11 +83,11 @@
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:onClick="ButtonClicked"
-                android:text="@string/ln"
+                android:text="@string/x"
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#707070"></Button>
         </TableRow>
 
         <TableRow>
@@ -140,59 +137,6 @@
                 android:layout_height="60dp"
                 android:onClick="ButtonClicked"
                 android:text="@string/ctg"
-                android:textAllCaps="false"
-                android:textColor="#F9F3FA"
-                android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
-        </TableRow>
-
-        <TableRow>
-
-            <Button
-                style='"?android:attr/buttonBarButtonStyle"'
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:onClick="ButtonClicked"
-                android:text="@string/i"
-                android:textAllCaps="false"
-                android:textColor="#F9F3FA"
-                android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
-
-            <Button
-                style='"?android:attr/buttonBarButtonStyle"'
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:onClick="ButtonClicked"
-                android:text="@string/e"
-                android:textAllCaps="false"
-                android:textColor="#F9F3FA"
-                android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
-
-            <Button
-                style='"?android:attr/buttonBarButtonStyle"'
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp"
-                android:onClick="ButtonClicked"
-                android:text="@string/piSymbol"
-                android:textAllCaps="false"
-                android:textColor="#F9F3FA"
-                android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
-
-            <Button
-                style='"?android:attr/buttonBarButtonStyle"'
-                android:layout_width="50dp"
-                android:layout_height="60dp"
-                android:onClick="ButtonClicked"
-                android:text="@string/phiSymbol"
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"

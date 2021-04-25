@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/roundcalc"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calculator">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".DerivativesActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".GCDActivity" />
         <activity android:name=".MenuActivity">
             <intent-filter>

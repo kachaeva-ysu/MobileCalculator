@@ -6,6 +6,7 @@ import java.util.Stack;
 
 public class SimpleExpression
 {
+    final double phi=1.618033988749895;
     private List<String> GetOperationsAndOperands(String expression)
     {
         List<String> operationsAndOperands = new ArrayList<String>();
@@ -21,10 +22,13 @@ public class SimpleExpression
                     previousSymbolIsANumber=false;
                     operationsAndOperands.add("*");
                 }
-                if (expression.charAt(i) == 'p' && expression.charAt(i+1) == 'i')
+                if (expression.charAt(i) == 'π')
                 {
-                    i +=1;
                     operationsAndOperands.add(Double.toString(Math.PI));
+                }
+                else if (expression.charAt(i) == 'φ')
+                {
+                    operationsAndOperands.add(Double.toString(phi));
                 }
                 else if (expression.charAt(i) == 'e')
                 {

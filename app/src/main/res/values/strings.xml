@@ -20,7 +20,6 @@
     <string name="_6">6</string>
     <string name="multiply">*</string>
     <string name="add">+</string>
-    <string name="pi">pi</string>
     <string name="e">e</string>
     <string name="i">i</string>
     <string name="ctg">ctg</string>
@@ -38,4 +37,7 @@
     <string name="calc">Калькулятор</string>
     <string name="der">Производные</string>
     <string name="gcd">НОД</string>
+    <string name="x">x</string>
+    <string name="piSymbol">π</string>
+    <string name="phiSymbol">φ</string>
 </resources>

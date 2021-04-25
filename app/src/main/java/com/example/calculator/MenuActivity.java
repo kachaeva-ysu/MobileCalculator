@@ -29,7 +29,8 @@ public class MenuActivity extends AppCompatActivity {
     }
     public void ButtonDerivativesClicked(android.view.View view)
     {
-
+        android.content.Intent intent=new android.content.Intent(MenuActivity.this,DerivativesActivity.class);
+        startActivity(intent);
     }
 
 }

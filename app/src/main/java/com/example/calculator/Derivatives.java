@@ -25,7 +25,7 @@ public class Derivatives {
                     operationsAndOperands.add("x");
                     previousSymbolIsANumber=true;
                 }
-                if (expression.charAt(i) == 'p' && expression.charAt(i+1) == 'i')
+                else if (expression.charAt(i) == 'p' && expression.charAt(i+1) == 'i')
                 {
                     i +=1;
                     operationsAndOperands.add(Double.toString(Math.PI));
@@ -111,7 +111,7 @@ public class Derivatives {
             default: return -1;
         }
     }
-    private List<String> GetReversePolishNotation(String exp)
+    public List<String> GetReversePolishNotation(String exp)
     {
         List<String> operationsAndOperands = GetOperationsAndOperands(exp);
         Stack<String> stack = new Stack<String>();
