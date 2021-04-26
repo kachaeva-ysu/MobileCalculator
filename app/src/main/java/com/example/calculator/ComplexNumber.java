@@ -1,7 +1,6 @@
 package com.example.calculator;
 
 import java.text.DecimalFormat;
-import java.util.Locale;
 
 public class ComplexNumber
 {
@@ -19,8 +18,6 @@ public class ComplexNumber
     public String toString()
     {
         DecimalFormat df=new DecimalFormat("#.####");
-//        Locale myLocale=Locale.US;
-//        NumberFormat.getInstance(myLocale);
         Re=Double.parseDouble(df.format(Re));
         Im=Double.parseDouble(df.format(Im));
         if (Re == 0 && Im == 0)

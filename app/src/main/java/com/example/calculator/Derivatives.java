@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.Stack;
 
 public class Derivatives {
+    @SuppressWarnings("SimplifiableBooleanExpression")
     private List<String> GetOperationsAndOperands(String expression)
     {
-        List<String> operationsAndOperands = new ArrayList<String>();
+        List<String> operationsAndOperands = new ArrayList<>();
         StringBuilder number = new StringBuilder();
         boolean previousSymbolIsANumber = false;
         for(int i=0;i<expression.length();i++)
@@ -114,8 +115,8 @@ public class Derivatives {
     public List<String> GetReversePolishNotation(String exp)
     {
         List<String> operationsAndOperands = GetOperationsAndOperands(exp);
-        Stack<String> stack = new Stack<String>();
-        List<String> rpn = new ArrayList<String>();
+        Stack<String> stack = new Stack<>();
+        List<String> rpn = new ArrayList<>();
 
         for (String symbol : operationsAndOperands)
         {

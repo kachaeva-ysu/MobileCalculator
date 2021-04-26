@@ -7,9 +7,10 @@ import java.util.Stack;
 public class SimpleExpression
 {
     final double phi=1.618033988749895;
+    @SuppressWarnings("SimplifiableBooleanExpression")
     private List<String> GetOperationsAndOperands(String expression)
     {
-        List<String> operationsAndOperands = new ArrayList<String>();
+        List<String> operationsAndOperands = new ArrayList<>();
         StringBuilder number = new StringBuilder();
         boolean previousSymbolIsANumber = false;
         for(int i=0;i<expression.length();i++)
@@ -115,8 +116,8 @@ public class SimpleExpression
     private List<String> GetReversePolishNotation(String exp)
     {
         List<String> operationsAndOperands = GetOperationsAndOperands(exp);
-        Stack<String> stack = new Stack<String>();
-        List<String> rpn = new ArrayList<String>();
+        Stack<String> stack = new Stack<>();
+        List<String> rpn = new ArrayList<>();
 
         for (String symbol : operationsAndOperands)
         {
@@ -161,7 +162,7 @@ public class SimpleExpression
     {
         exp = exp.replaceAll("\\s+","");
         List<String> rpn = GetReversePolishNotation(exp);
-        Stack<ComplexNumber> stack = new Stack<ComplexNumber>();
+        Stack<ComplexNumber> stack = new Stack<>();
         for(String symbol : rpn)
         {
             try
@@ -172,65 +173,64 @@ public class SimpleExpression
             {
                 ComplexNumber rValue = stack.pop();
                 ComplexNumber lValue;
-                if (symbol.equals("~"))
-                    stack.push(ComplexNumber.Multiply(rValue, -1));
-                else if (symbol.equals("abs"))
-                {
-                    stack.push(new ComplexNumber(rValue.GetAbs(), 0));
-                }
-                else if (symbol.equals("sqrt"))
-                {
-                    double n=0.5;
-                    double arg;
-                    if(rValue.Re>0)
-                        arg=Math.atan(rValue.Im/rValue.Re);
-                    else
-                        arg=Math.atan(rValue.Im/rValue.Re)+Math.PI;
-                    stack.push(new ComplexNumber(Math.pow(rValue.GetAbs(),n)*Math.cos(n*arg),Math.pow(rValue.GetAbs(),n)*Math.sin(n*arg)));
-                }
-                else if (symbol.equals("sin"))
-                {
-                    stack.push(new ComplexNumber(Math.sin(rValue.Re)*Math.cosh(rValue.Im),Math.cos(rValue.Re)*Math.sinh(rValue.Im)));
-                }
-                else if (symbol.equals("cos"))
-                {
-                    stack.push(new ComplexNumber(Math.cos(rValue.Re)*Math.cosh(rValue.Im),-Math.sin(rValue.Re)*Math.sinh(rValue.Im)));
-                }
-                else if (symbol.equals("tg"))
-                {
-                    stack.push(new ComplexNumber(Math.sin(rValue.Re*2)/(Math.cos(rValue.Re*2)+Math.cosh(rValue.Im*2)),Math.sinh(rValue.Im*2)/(Math.cos(rValue.Re*2)+Math.cosh(rValue.Im*2))));
-                }
-                else if (symbol.equals("ctg"))
-                {
-                    stack.push(new ComplexNumber(-Math.sin(rValue.Re*2)/(Math.cos(rValue.Re*2)-Math.cosh(rValue.Im*2)),Math.sinh(rValue.Im*2)/(Math.cos(rValue.Re*2)-Math.cosh(rValue.Im*2))));
-                }
-                else if (symbol.equals("ln"))
-                {
-                    stack.push(new ComplexNumber(Math.log(Double.parseDouble(rValue.toString())), 0));
-                }
-                else
-                {
-                    lValue = stack.pop();
-                    if (symbol.equals("+"))
-                        stack.push(ComplexNumber.Add(lValue , rValue));
-                    else if (symbol.equals("-"))
-                        stack.push(ComplexNumber.Subtract(lValue ,rValue));
-                    else if (symbol.equals("*"))
-                        stack.push(ComplexNumber.Multiply(lValue , rValue));
-                    else if (symbol.equals("/"))
-                        stack.push(ComplexNumber.Divide(lValue , rValue));
-                    else if (symbol.equals("^"))
-                    {
-                        if(rValue.Im!=0)
-                            throw new IllegalArgumentException();
-                        double n=rValue.Re;
+                switch (symbol) {
+                    case "~":
+                        stack.push(ComplexNumber.Multiply(rValue, -1));
+                        break;
+                    case "abs":
+                        stack.push(new ComplexNumber(rValue.GetAbs(), 0));
+                        break;
+                    case "sqrt":
+                        double n = 0.5;
                         double arg;
-                        if(lValue.Re>0)
-                            arg=Math.atan(lValue.Im/lValue.Re);
+                        if (rValue.Re > 0)
+                            arg = Math.atan(rValue.Im / rValue.Re);
                         else
-                            arg=Math.atan(lValue.Im/lValue.Re)+Math.PI;
-                        stack.push(new ComplexNumber(Math.pow(lValue.GetAbs(),n)*Math.cos(n*arg),Math.pow(lValue.GetAbs(),n)*Math.sin(n*arg)));
-                    }
+                            arg = Math.atan(rValue.Im / rValue.Re) + Math.PI;
+                        stack.push(new ComplexNumber(Math.pow(rValue.GetAbs(), n) * Math.cos(n * arg), Math.pow(rValue.GetAbs(), n) * Math.sin(n * arg)));
+                        break;
+                    case "sin":
+                        stack.push(new ComplexNumber(Math.sin(rValue.Re) * Math.cosh(rValue.Im), Math.cos(rValue.Re) * Math.sinh(rValue.Im)));
+                        break;
+                    case "cos":
+                        stack.push(new ComplexNumber(Math.cos(rValue.Re) * Math.cosh(rValue.Im), -Math.sin(rValue.Re) * Math.sinh(rValue.Im)));
+                        break;
+                    case "tg":
+                        stack.push(new ComplexNumber(Math.sin(rValue.Re * 2) / (Math.cos(rValue.Re * 2) + Math.cosh(rValue.Im * 2)), Math.sinh(rValue.Im * 2) / (Math.cos(rValue.Re * 2) + Math.cosh(rValue.Im * 2))));
+                        break;
+                    case "ctg":
+                        stack.push(new ComplexNumber(-Math.sin(rValue.Re * 2) / (Math.cos(rValue.Re * 2) - Math.cosh(rValue.Im * 2)), Math.sinh(rValue.Im * 2) / (Math.cos(rValue.Re * 2) - Math.cosh(rValue.Im * 2))));
+                        break;
+                    case "ln":
+                        stack.push(new ComplexNumber(Math.log(Double.parseDouble(rValue.toString())), 0));
+                        break;
+                    default:
+                        lValue = stack.pop();
+                        switch (symbol) {
+                            case "+":
+                                stack.push(ComplexNumber.Add(lValue, rValue));
+                                break;
+                            case "-":
+                                stack.push(ComplexNumber.Subtract(lValue, rValue));
+                                break;
+                            case "*":
+                                stack.push(ComplexNumber.Multiply(lValue, rValue));
+                                break;
+                            case "/":
+                                stack.push(ComplexNumber.Divide(lValue, rValue));
+                                break;
+                            case "^":
+                                if (rValue.Im != 0)
+                                    throw new IllegalArgumentException();
+                                n = rValue.Re;
+                                if (lValue.Re > 0)
+                                    arg = Math.atan(lValue.Im / lValue.Re);
+                                else
+                                    arg = Math.atan(lValue.Im / lValue.Re) + Math.PI;
+                                stack.push(new ComplexNumber(Math.pow(lValue.GetAbs(), n) * Math.cos(n * arg), Math.pow(lValue.GetAbs(), n) * Math.sin(n * arg)));
+                                break;
+                        }
+                        break;
                 }
             }
         }

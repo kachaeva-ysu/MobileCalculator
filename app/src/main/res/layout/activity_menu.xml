@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:layout_gravity="top"
     android:background="#FFFFFF"
-    tools:context=".MenuActivity">
+    tools:context=".MenuActivity"
+    tools:ignore="Overdraw">
 
     <TableLayout
         android:layout_width="fill_parent"
@@ -31,7 +32,7 @@
             android:textAllCaps="false"
             android:textColor="#471150"
             android:textSize="28sp"
-            app:backgroundTint="#CDA9D3"></Button>
+            app:backgroundTint="#CDA9D3" />
 
         <Button
             style='"?android:attr/buttonBarButtonStyle"'
@@ -41,7 +42,7 @@
             android:text="@string/gcd"
             android:textColor="#471150"
             android:textSize="28sp"
-            app:backgroundTint="#CDA9D3"></Button>
+            app:backgroundTint="#CDA9D3" />
 
         <Button
             style='"?android:attr/buttonBarButtonStyle"'
@@ -51,7 +52,7 @@
             android:textAllCaps="false"
             android:textColor="#471150"
             android:textSize="28sp"
-            app:backgroundTint="#CDA9D3"></Button>
+            app:backgroundTint="#CDA9D3" />
 
     </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

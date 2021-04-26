@@ -8,7 +8,8 @@
     android:layout_marginEnd="5dp"
     android:layout_marginRight="5dp"
     android:background="#FFFFFF"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:ignore="Overdraw">
 
     <TableLayout
         android:layout_width="fill_parent"
@@ -30,7 +31,7 @@
             android:layout_gravity="end"
             android:gravity="end"
             android:textColor="#5C5C5C"
-            android:textSize="36sp"></TextView>
+            android:textSize="36sp" />
 
         <TextView
             android:id="@+id/OutputBottom"
@@ -39,7 +40,7 @@
             android:layout_gravity="end"
             android:gravity="end"
             android:textColor="#020202"
-            android:textSize="48sp"></TextView>
+            android:textSize="48sp" />
 
         <TableRow>
 
@@ -53,7 +54,7 @@
                 android:text="@string/pow"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#ACACAC" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -66,7 +67,7 @@
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#ACACAC" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -79,7 +80,7 @@
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#ACACAC" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -90,7 +91,7 @@
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#ACACAC" />
         </TableRow>
 
         <TableRow>
@@ -106,7 +107,7 @@
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#ACACAC" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -119,7 +120,7 @@
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#ACACAC" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -132,7 +133,7 @@
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#ACACAC" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -143,7 +144,7 @@
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#ACACAC" />
         </TableRow>
 
         <TableRow>
@@ -159,7 +160,7 @@
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#ACACAC" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -172,7 +173,7 @@
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#ACACAC" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -185,7 +186,7 @@
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#ACACAC" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -196,7 +197,7 @@
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#ACACAC"></Button>
+                app:backgroundTint="#ACACAC" />
         </TableRow>
 
         <TableRow>
@@ -211,7 +212,7 @@
                 android:text="@string/firstButton"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#EAD7ED"></Button>
+                app:backgroundTint="#EAD7ED" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -223,7 +224,7 @@
                 android:text="@string/secondButton"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#EAD7ED"></Button>
+                app:backgroundTint="#EAD7ED" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -235,7 +236,7 @@
                 android:text="@string/c"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#EAD7ED"></Button>
+                app:backgroundTint="#EAD7ED" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -245,7 +246,7 @@
                 android:text="@string/delete"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#EAD7ED"></Button>
+                app:backgroundTint="#EAD7ED" />
         </TableRow>
 
         <TableRow>
@@ -260,7 +261,7 @@
                 android:text="@string/_1"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -272,7 +273,7 @@
                 android:text="@string/_2"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -284,7 +285,7 @@
                 android:text="@string/_3"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -294,7 +295,7 @@
                 android:text="@string/divide"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#EAD7ED"></Button>
+                app:backgroundTint="#EAD7ED" />
         </TableRow>
 
         <TableRow>
@@ -309,7 +310,7 @@
                 android:text="@string/_4"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -321,7 +322,7 @@
                 android:text="@string/_5"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -333,7 +334,7 @@
                 android:text="@string/_6"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -343,7 +344,7 @@
                 android:text="@string/multiply"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#EAD7ED"></Button>
+                app:backgroundTint="#EAD7ED" />
         </TableRow>
 
         <TableRow>
@@ -358,7 +359,7 @@
                 android:text="@string/_7"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -370,7 +371,7 @@
                 android:text="@string/_8"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -382,7 +383,7 @@
                 android:text="@string/_9"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -392,7 +393,7 @@
                 android:text="@string/subtract"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#EAD7ED"></Button>
+                app:backgroundTint="#EAD7ED" />
         </TableRow>
 
         <TableRow>
@@ -407,7 +408,7 @@
                 android:text="@string/dot"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -419,7 +420,7 @@
                 android:text="@string/_0"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#CDA9D3"></Button>
+                app:backgroundTint="#CDA9D3" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -431,7 +432,7 @@
                 android:text="@string/equal"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"
-                app:backgroundTint="#9D72A5"></Button>
+                app:backgroundTint="#9D72A5" />
 
             <Button
                 style='"?android:attr/buttonBarButtonStyle"'
@@ -441,7 +442,7 @@
                 android:text="@string/add"
                 android:textColor="#471150"
                 android:textSize="18sp"
-                app:backgroundTint="#EAD7ED"></Button>
+                app:backgroundTint="#EAD7ED" />
         </TableRow>
 
     </TableLayout>

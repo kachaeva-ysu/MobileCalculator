@@ -22,8 +22,7 @@ public class GCD
             stroka2[4] = stroka1[1] - stroka2[0] * stroka2[1];
             stroka2[5] = stroka1[2] - stroka2[0] * stroka2[2];
             stroka2[6] = stroka1[3] - stroka1[6] * stroka2[0];
-            for (int i = 0; i < 7; i++)
-                stroka1[i] = stroka2[i];
+            System.arraycopy(stroka2, 0, stroka1, 0, 7);
         }
         answer[0] = stroka1[3];
         if (a > b)
@@ -72,8 +71,7 @@ public class GCD
             stroka2[4] = ComplexNumber.Subtract(stroka1[1] , ComplexNumber.Multiply(stroka2[0] , stroka2[1]));
             stroka2[5] = ComplexNumber.Subtract(stroka1[2] , ComplexNumber.Multiply(stroka2[0] , stroka2[2]));
             stroka2[6] = ComplexNumber.Subtract(stroka1[3] , ComplexNumber.Multiply(stroka1[6] , stroka2[0]));
-            for (int i = 0; i < 7; i++)
-                stroka1[i] = stroka2[i];
+            System.arraycopy(stroka2, 0, stroka1, 0, 7);
         }
         answer[0] = stroka1[3];
         if (a.GetAbs() >= b.GetAbs())

@@ -4,12 +4,9 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -77,6 +74,7 @@ public class GCDActivity extends AppCompatActivity {
                 if(text.length()!=0)
             input2.setText(text.substring(0,text.length()-1));}
     }
+    @SuppressLint("DefaultLocale")
     public void ButtonCalculateClicked(android.view.View view)
     {
         GCD gcd=new GCD();
@@ -87,8 +85,8 @@ public class GCDActivity extends AppCompatActivity {
         try {
 
             int[] answer=gcd.FindNOD(Integer.parseInt(input1.getText().toString()),Integer.parseInt(input2.getText().toString()));
-            output.setText(format("НОД:  %d", answer[0]));
-            output2.setText(format("Коэффициенты Безу:  %d  %d", answer[1], answer[2]));
+            output.setText(String.format("НОД:  %d", answer[0]));
+            output2.setText(String.format("Коэффициенты Безу:  %d  %d", answer[1], answer[2]));
         }
         catch (Exception e)
         {

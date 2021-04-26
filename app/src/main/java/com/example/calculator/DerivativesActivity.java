@@ -3,11 +3,15 @@ package com.example.calculator;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Objects;
+
+@SuppressWarnings("DuplicateExpressions")
 public class DerivativesActivity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -15,9 +19,10 @@ public class DerivativesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_derivatives);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         getWindow().setStatusBarColor(getResources().getColor(R.color.black));
     }
+    @SuppressLint("SetTextI18n")
     public void ButtonClicked(android.view.View view)
     {
         Button btn=(Button)view;

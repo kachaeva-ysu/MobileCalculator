@@ -8,7 +8,8 @@
     android:layout_marginEnd="5dp"
     android:layout_marginRight="5dp"
     android:background="#FFFFFF"
-    tools:context=".GCDActivity">
+    tools:context=".GCDActivity"
+    tools:ignore="Overdraw">
 
     <TableLayout
         android:layout_width="fill_parent"
