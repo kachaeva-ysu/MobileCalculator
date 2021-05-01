@@ -47,8 +47,8 @@
         <Button
             style='"?android:attr/buttonBarButtonStyle"'
             android:height="70dp"
-            android:onClick="ButtonDerivativesClicked"
-            android:text="@string/der"
+            android:onClick="ButtonOPZClicked"
+            android:text="@string/opz"
             android:textAllCaps="false"
             android:textColor="#471150"
             android:textSize="28sp"

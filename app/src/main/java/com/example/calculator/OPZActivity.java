@@ -8,28 +8,37 @@ import android.os.Build;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.List;
 
 import java.util.Objects;
 
-@SuppressWarnings("DuplicateExpressions")
-public class DerivativesActivity extends AppCompatActivity {
+public class OPZActivity extends AppCompatActivity {
+
+    boolean calculateClicked=false;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_derivatives);
+        setContentView(R.layout.activity_o_p_z);
         Objects.requireNonNull(getSupportActionBar()).hide();
         getWindow().setStatusBarColor(getResources().getColor(R.color.black));
     }
     @SuppressLint("SetTextI18n")
     public void ButtonClicked(android.view.View view)
     {
+
         Button btn=(Button)view;
         String text=btn.getText().toString();
         TextView output= findViewById(R.id.OutputBottom);
-        if(!(output.getText().equals("Некорректное выражение")||output.getText().equals("Не число")||output.getText().equals("∞")||output.getText().equals("-∞")))
+        if(!calculateClicked)
             output.setText(output.getText()+text);
+        else {
+            output.setText(text);
+            TextView output1= findViewById(R.id.OutputTop);
+            output1.setText("");
+            calculateClicked=false;
+        }
     }
     public void ButtonClearClicked(android.view.View view)
     {
@@ -37,6 +46,7 @@ public class DerivativesActivity extends AppCompatActivity {
         TextView output1= findViewById(R.id.OutputTop);
         output1.setText("");
         output2.setText("");
+        calculateClicked=false;
     }
     public void ButtonDeleteSymbolClicked(android.view.View view)
     {
@@ -66,23 +76,21 @@ public class DerivativesActivity extends AppCompatActivity {
     }
     public void ButtonCalculateClicked(android.view.View view) {
         TextView output2 = findViewById(R.id.OutputBottom);
-        if (!(output2.getText().equals("Некорректное выражение") || output2.getText().equals("Не число") || output2.getText().equals("∞") || output2.getText().equals("-∞"))) {
             String exp = output2.getText().toString();
-            Derivatives der=new Derivatives();
+            SimpleExpression simpleExpression = new SimpleExpression();
             TextView output1 = findViewById(R.id.OutputTop);
             output1.setText(output2.getText());
             try {
-//                StringBuilder answer=new StringBuilder();
-//                for(String symbol:der.GetReversePolishNotation(exp))
-//                {
-//                    answer.append(symbol);
-//                    answer.append(' ');
-//                }
-//                output2.setText(answer);
-                output2.setText(der.GetAnswer(exp));
+                StringBuilder answer=new StringBuilder();
+                for(String symbol:simpleExpression.GetReversePolishNotation(exp))
+                {
+                    answer.append(symbol);
+                    answer.append(' ');
+                }
+                output2.setText(answer);
             } catch (Exception e) {
                 output2.setText("Некорректное выражение");
             }
-        }
+            calculateClicked=true;
     }
 }

@@ -1,7 +1,14 @@
 package com.example.calculator;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Stack;
 
 public class Derivatives {
@@ -157,4 +164,229 @@ public class Derivatives {
             rpn.add(stack.pop());
         return rpn;
     }
+//    public String GetAnswer(String exp)
+//    {
+//        List<String> rpn = GetReversePolishNotation(exp);
+//        Stack<String> stack = new Stack<>();
+//        for(String symbol : rpn)
+//        {
+//            if(Priority(symbol)==-1)
+//                stack.push(symbol);
+//            else
+//            {
+//                String rValue = stack.pop();
+//                String lValue;
+//                switch (symbol) {
+//                    case "~":
+//                        stack.push('-'+rValue);
+//                        break;
+//                    case "sqrt":
+//                        stack.push("1/2sqrt"+rValue);
+//                        break;
+//                    case "sin":
+//                        stack.push("cos"+rValue);
+//                        break;
+//                    case "cos":
+//                        stack.push("-sin"+rValue);
+//                        break;
+//                    case "tg":
+//                        stack.push("1/cos^2"+rValue);
+//                        break;
+//                    case "ctg":
+//                        stack.push("-1/sin^2"+rValue);
+//                        break;
+//                    case "ln":
+//                        stack.push("1/"+rValue);
+//                        break;
+//                    default:
+//                        lValue = stack.pop();
+//                        switch (symbol) {
+//                            case "+":
+//                                stack.push(GetAnswer(lValue)+'+'+GetAnswer(rValue));
+//                                break;
+//                            case "-":
+//                                stack.push(GetAnswer(lValue)+'-'+GetAnswer(rValue));
+//                                break;
+////                            case "*":
+////                                stack.push(ComplexNumber.Multiply(lValue, rValue));
+////                                break;
+////                            case "/":
+////                                stack.push(ComplexNumber.Divide(lValue, rValue));
+////                                break;
+////                            case "^":
+////                                if (rValue.Im != 0)
+////                                    throw new IllegalArgumentException();
+////                                n = rValue.Re;
+////                                if (lValue.Re > 0)
+////                                    arg = Math.atan(lValue.Im / lValue.Re);
+////                                else
+////                                    arg = Math.atan(lValue.Im / lValue.Re) + Math.PI;
+////                                stack.push(new ComplexNumber(Math.pow(lValue.GetAbs(), n) * Math.cos(n * arg), Math.pow(lValue.GetAbs(), n) * Math.sin(n * arg)));
+////                                break;
+//                        }
+//                        break;
+//                }
+//            }
+//        }
+//        if(stack.size()!=1)
+//            throw new IllegalArgumentException();
+//        return stack.pop();
+//    }
+
+    public String GetAnswer(String exp)
+    {
+        List<String> rpn = GetReversePolishNotation(exp);
+        return SimpleDerivatives(rpn);
+    }
+    public String SimpleDerivatives(List<String> rpn)
+    {
+        switch (rpn.get(rpn.size()-1))
+        {
+            case "+": {
+                Stack<List<String>> stack = new Stack<>();
+                for (int i=0;i<rpn.size()-1;i++) {
+                    String symbol=rpn.get(i);
+                    if (Priority(symbol) == -1) {
+                        List<String> list = new ArrayList<String>();
+                        list.add(symbol);
+                        stack.push(list);
+                    } else if (Priority(symbol) == 6) {
+                        List<String> list = new ArrayList<String>(stack.pop());
+                        list.add(symbol);
+                        stack.push(list);
+                    } else {
+                        List<String> list = new ArrayList<String>();
+                        List<String> second = stack.pop();
+                        List<String> first = stack.pop();
+                        list.addAll(first);
+                        list.addAll(second);
+                        list.add(symbol);
+                        stack.push(list);
+                    }
+                }
+                List<String> second = stack.pop();
+                List<String> first = stack.pop();
+                return SimpleDerivatives(first) +'+'+ SimpleDerivatives(second);
+            }
+            case "-": {
+                Stack<List<String>> stack = new Stack<>();
+                for (int i=0;i<rpn.size()-1;i++) {
+                    String symbol=rpn.get(i);
+                    if (Priority(symbol) == -1) {
+                        List<String> list = new ArrayList<String>();
+                        list.add(symbol);
+                        stack.push(list);
+                    } else if (Priority(symbol) == 6) {
+                        List<String> list = new ArrayList<String>(stack.pop());
+                        list.add(symbol);
+                        stack.push(list);
+                    } else {
+                        List<String> list = new ArrayList<String>();
+                        List<String> second = stack.pop();
+                        List<String> first = stack.pop();
+                        list.addAll(first);
+                        list.addAll(second);
+                        list.add(symbol);
+                        stack.push(list);
+                    }
+                }
+                List<String> second = stack.pop();
+                List<String> first = stack.pop();
+                return SimpleDerivatives(first) +'-'+ SimpleDerivatives(second);
+            }
+            case "*": {
+                Stack<List<String>> stack = new Stack<>();
+                for (int i=0;i<rpn.size()-1;i++) {
+                    String symbol=rpn.get(i);
+                    if (Priority(symbol) == -1) {
+                        List<String> list = new ArrayList<String>();
+                        list.add(symbol);
+                        stack.push(list);
+                    } else if (Priority(symbol) == 6) {
+                        List<String> list = new ArrayList<String>(stack.pop());
+                        list.add(symbol);
+                        stack.push(list);
+                    } else {
+                        List<String> list = new ArrayList<String>();
+                        List<String> second = stack.pop();
+                        List<String> first = stack.pop();
+                        list.addAll(first);
+                        list.addAll(second);
+                        list.add(symbol);
+                        stack.push(list);
+                    }
+                }
+                List<String> second = stack.pop();
+                List<String> first = stack.pop();
+                return SimpleDerivatives(first) +'*'+ Answer(second)+'+'+SimpleDerivatives(second) +'*'+ Answer(first);
+            }
+
+            case "x":
+                return "1";
+            default: return "0";
+
+        }
+    }
+    private String Answer(List<String> rpn)
+    {
+        Stack<String> stack = new Stack<>();
+        for(String symbol : rpn)
+        {
+            if(Priority(symbol)==-1)
+                stack.push(symbol);
+            else
+            {
+                String rValue = stack.pop();
+                String lValue;
+                switch (symbol) {
+                    case "~":
+                        stack.push('-'+rValue);
+                        break;
+                    case "sqrt":
+                        stack.push("sqrt("+rValue+")");
+                        break;
+                    case "sin":
+                        stack.push("sin("+rValue+")");
+                        break;
+                    case "cos":
+                        stack.push("cos("+rValue+")");
+                        break;
+                    case "tg":
+                        stack.push("tg("+rValue+")");
+                        break;
+                    case "ctg":
+                        stack.push("ctg("+rValue+")");
+                        break;
+                    case "ln":
+                        stack.push("ln("+rValue+")");
+                        break;
+                    default:
+                        lValue = stack.pop();
+                        switch (symbol) {
+                            case "+":
+                                stack.push(lValue+'+'+rValue);
+                                break;
+                            case "-":
+                                stack.push(lValue+'-'+rValue);
+                                break;
+                            case "*":
+                                stack.push(lValue+'*'+rValue);
+                                break;
+                            case "/":
+                                stack.push(lValue+'/'+rValue);
+                                break;
+                            case "^":
+                                stack.push(lValue+'^'+rValue);
+
+                                break;
+                        }
+                        break;
+                }
+            }
+        }
+        if(stack.size()!=1)
+            throw new IllegalArgumentException();
+        return stack.pop();
+    }
+
 }

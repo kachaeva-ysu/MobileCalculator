@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/roundcalc"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calculator">
+        <activity android:name=".OPZActivity"></activity>
         <activity android:name=".DerivativesActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".GCDActivity" />

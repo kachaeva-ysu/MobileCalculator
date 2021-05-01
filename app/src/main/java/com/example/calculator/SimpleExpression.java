@@ -113,7 +113,7 @@ public class SimpleExpression
             default: return -1;
         }
     }
-    private List<String> GetReversePolishNotation(String exp)
+    public List<String> GetReversePolishNotation(String exp)
     {
         List<String> operationsAndOperands = GetOperationsAndOperands(exp);
         Stack<String> stack = new Stack<>();
@@ -160,7 +160,6 @@ public class SimpleExpression
     }
     public ComplexNumber GetAnswer(String exp)
     {
-        exp = exp.replaceAll("\\s+","");
         List<String> rpn = GetReversePolishNotation(exp);
         Stack<ComplexNumber> stack = new Stack<>();
         for(String symbol : rpn)
