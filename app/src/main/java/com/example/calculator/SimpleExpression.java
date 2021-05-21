@@ -1,13 +1,10 @@
 package com.example.calculator;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
 public class SimpleExpression
 {
-    final double phi=1.618033988749895;
-    @SuppressWarnings("SimplifiableBooleanExpression")
     private List<String> GetOperationsAndOperands(String expression)
     {
         List<String> operationsAndOperands = new ArrayList<>();
@@ -17,24 +14,17 @@ public class SimpleExpression
         {
             if (Priority(Character.toString(expression.charAt(i))) == -1 && Character.isLetter(expression.charAt(i))&&expression.charAt(i)!='i')
             {
-                if(previousSymbolIsANumber) {
+                if(previousSymbolIsANumber)
+                {
                     operationsAndOperands.add(number.toString());
                     number=new StringBuilder();
                     previousSymbolIsANumber=false;
                     operationsAndOperands.add("*");
                 }
                 if (expression.charAt(i) == 'π')
-                {
                     operationsAndOperands.add(Double.toString(Math.PI));
-                }
-                else if (expression.charAt(i) == 'φ')
-                {
-                    operationsAndOperands.add(Double.toString(phi));
-                }
                 else if (expression.charAt(i) == 'e')
-                {
                     operationsAndOperands.add(Double.toString(Math.E));
-                }
                 else if (expression.charAt(i) == 'a' && expression.charAt(i+1) == 'b' && expression.charAt(i+2) == 's')
                 {
                     i +=2;
@@ -67,7 +57,7 @@ public class SimpleExpression
                 }
                 else if (expression.charAt(i) == 'l' && expression.charAt(i+1) == 'n')
                 {
-                    i +=1;
+                    i++;
                     operationsAndOperands.add("ln");
                 }
                 else
@@ -109,7 +99,6 @@ public class SimpleExpression
             case "~": return 4;
             case "^":  return 5;
             case "sqrt": case "sin": case"cos": case "tg": case "ctg": case "ln": case "abs": return 6;
-            case ";": return 7;
             default: return -1;
         }
     }
@@ -118,39 +107,27 @@ public class SimpleExpression
         List<String> operationsAndOperands = GetOperationsAndOperands(exp);
         Stack<String> stack = new Stack<>();
         List<String> rpn = new ArrayList<>();
-
         for (String symbol : operationsAndOperands)
         {
             int priority = Priority(symbol);
             if (priority == -1)
-            {
                 rpn.add(symbol);
-            }
             else
             {
                 if (symbol.equals("(") || stack.size() == 0 || priority > Priority(stack.peek())&&!symbol.equals(")"))
-                {
                     stack.push(symbol);
-                }
                 else
                 {
                     while (stack.size() > 0 && priority <= Priority(stack.peek()))
-                    {
                         rpn.add(stack.pop());
-                    }
                     if (symbol.equals(")"))
                     {
                         while (Priority(stack.peek()) != 0)
-                        {
                             rpn.add(stack.pop());
-                        }
                         stack.pop();
                     }
                     else
-                    {
                         stack.push(symbol);
-                    }
-
                 }
             }
         }
@@ -174,7 +151,7 @@ public class SimpleExpression
                 ComplexNumber lValue;
                 switch (symbol) {
                     case "~":
-                        stack.push(ComplexNumber.Multiply(rValue, -1));
+                        stack.push(ComplexNumber.Multiply(rValue, new ComplexNumber(-1,0)));
                         break;
                     case "abs":
                         stack.push(new ComplexNumber(rValue.GetAbs(), 0));

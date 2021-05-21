@@ -5,22 +5,18 @@
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
-        android:icon="@mipmap/mycalc"
         android:label="@string/app_name"
+        android:icon="@mipmap/mycalc"
         android:roundIcon="@mipmap/roundcalc"
         android:supportsRtl="true"
         android:theme="@style/Theme.Calculator">
-        <activity android:name=".OPZActivity"></activity>
-        <activity android:name=".DerivativesActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".GCDActivity" />
-        <activity android:name=".MenuActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".GCDActivity" />
     </application>
 
 </manifest>

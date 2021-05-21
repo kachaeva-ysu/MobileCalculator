@@ -1,19 +1,18 @@
 package com.example.calculator;
-
 import java.text.DecimalFormat;
 
 public class ComplexNumber
 {
     public double Re;
     public double Im;
-    public double GetAbs()
-    {
-        return Math.sqrt(Re * Re + Im * Im);
-    }
     public ComplexNumber(double re,double im)
     {
         Re = re;
         Im = im;
+    }
+    public double GetAbs()
+    {
+        return Math.sqrt(Re * Re + Im * Im);
     }
     public String toString()
     {
@@ -50,7 +49,6 @@ public class ComplexNumber
             return new ComplexNumber(0, -1);
         re.append(exp.charAt(0));
         int index = 1;
-
         while (index<exp.length()&&(Character.isDigit(exp.charAt(index))||exp.charAt(index)=='.'))
         {
             re.append(exp.charAt(index));
@@ -84,33 +82,17 @@ public class ComplexNumber
     {
         return new ComplexNumber(a.Re+b.Re,a.Im+b.Im);
     }
-    public static ComplexNumber Add(ComplexNumber a, Double b)
-    {
-        return new ComplexNumber(a.Re + b, a.Im);
-    }
     public static ComplexNumber Subtract(ComplexNumber a, ComplexNumber b)
     {
         return new ComplexNumber(a.Re-b.Re,a.Im-b.Im);
-    }
-    public static ComplexNumber Subtract(ComplexNumber a, double b)
-    {
-        return new ComplexNumber(a.Re - b, a.Im);
     }
     public static ComplexNumber Multiply(ComplexNumber a, ComplexNumber b)
     {
         return new ComplexNumber(a.Re * b.Re + a.Im * b.Im * -1, a.Re * b.Im + a.Im * b.Re);
     }
-    public static ComplexNumber Multiply(ComplexNumber a, double b)
-    {
-        return new ComplexNumber(a.Re * b, a.Im * b);
-    }
     public static ComplexNumber Divide(ComplexNumber a, ComplexNumber b)
     {
         double divider = b.Re * b.Re + b.Im * b.Im;
         return new ComplexNumber((a.Re * b.Re + a.Im * b.Im)/divider, (a.Re * b.Im*-1 + a.Im * b.Re)/divider);
-    }
-    public static ComplexNumber Divide(ComplexNumber a, double b)
-    {
-        return new ComplexNumber(a.Re / b, a.Im / b);
     }
 }

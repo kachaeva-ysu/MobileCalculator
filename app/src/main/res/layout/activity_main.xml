@@ -28,8 +28,6 @@
             android:id="@+id/OutputTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:gravity="end"
             android:textColor="#5C5C5C"
             android:textSize="36sp" />
 
@@ -192,8 +190,8 @@
                 style='"?android:attr/buttonBarButtonStyle"'
                 android:layout_width="50dp"
                 android:layout_height="60dp"
-                android:onClick="ButtonClicked"
-                android:text="@string/phiSymbol"
+                android:onClick="ButtonGCDClicked"
+                android:text="@string/gcd"
                 android:textAllCaps="false"
                 android:textColor="#F9F3FA"
                 android:textSize="18sp"

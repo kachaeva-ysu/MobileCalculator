@@ -86,9 +86,10 @@ public class GCD
         }
         if (answer[0].Re < 0||answer[0].Re==0&&answer[0].Im<0)
         {
-            answer[0] = ComplexNumber.Multiply(answer[0],-1);
-            answer[1] =ComplexNumber.Multiply(answer[1],-1);
-            answer[2] =ComplexNumber.Multiply(answer[2],-1);
+            ComplexNumber minusOne=new ComplexNumber(-1,0);
+            answer[0] = ComplexNumber.Multiply(answer[0],minusOne);
+            answer[1] =ComplexNumber.Multiply(answer[1],minusOne);
+            answer[2] =ComplexNumber.Multiply(answer[2],minusOne);
         }
         return answer;
     }
