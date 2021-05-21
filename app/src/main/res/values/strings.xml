@@ -32,11 +32,6 @@
     <string name="delete">⌫</string>
     <string name="_1number">Число 1</string>
     <string name="_2number">Число 2</string>
-    <string name="calc">Калькулятор</string>
-    <string name="der">Производные</string>
     <string name="gcd">НОД</string>
-    <string name="x">x</string>
     <string name="piSymbol">π</string>
-    <string name="phiSymbol">φ</string>
-    <string name="opz">ОПЗ</string>
 </resources>
